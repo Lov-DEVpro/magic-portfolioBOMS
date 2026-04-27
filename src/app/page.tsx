@@ -112,10 +112,9 @@ export default function Home() {
         <Carousel
           sizes="(max-width: 960px) 100vw, 960px"
           items={[
-            { slide: "/images/projects/project-01/cover-01.jpg", alt: "Gallery image 1" },
-            { slide: "/images/projects/project-01/cover-02.jpg", alt: "Gallery image 2" },
-            { slide: "/images/projects/project-01/cover-03.jpg", alt: "Gallery image 3" },
-            { slide: "/images/projects/project-01/cover-04.jpg", alt: "Gallery image 4" },
+            { slide: "/images/hero carousel 1920x1080/Untitled-1.jpg", alt: "BOMS-expo hero image 1" },
+            { slide: "/images/hero carousel 1920x1080/Untitled-2.jpg", alt: "BOMS-expo hero image 2" },
+            { slide: "/images/hero carousel 1920x1080/Untitled-3.jpg", alt: "BOMS-expo hero image 3" },
           ]}
         />
       </RevealFx>

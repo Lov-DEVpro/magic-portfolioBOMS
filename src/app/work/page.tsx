@@ -75,10 +75,9 @@ export default function Work() {
         }}
       />
 
-      {/* CORE SERVICES - STICKY SCROLL LAYOUT */}
-      <Grid columns="12" gap="xl" fillWidth marginBottom="80" style={{ position: 'relative', alignItems: 'flex-start' }}>
-        {/* LEFT COLUMN: STICKY INTRO */}
-        <Column style={{ gridColumn: 'span 5', top: '120px', height: 'fit-content' }} s={{ style: { gridColumn: 'span 12' } }} position="sticky" gap="16">
+      {/* CORE SERVICES */}
+      <Column fillWidth gap="xl" marginBottom="80">
+        <Column maxWidth="m" gap="16">
           <RevealFx translateY="4">
             <Text variant="label-default-s" onBackground="brand-medium" style={{ textTransform: 'uppercase', letterSpacing: '2px' }}>
               Šta radimo
@@ -94,8 +93,7 @@ export default function Work() {
           </RevealFx>
         </Column>
 
-        {/* RIGHT COLUMN: COMPACT SCROLLING CARDS */}
-        <Column style={{ gridColumn: 'span 7' }} s={{ style: { gridColumn: 'span 12' } }} gap="l">
+        <Grid columns="2" s={{ columns: '1fr' }} gap="l" fillWidth>
           {services.map((service, index) => (
             <RevealFx key={index} translateY="12" delay={index * 0.1}>
               <Card
@@ -131,28 +129,26 @@ export default function Work() {
                     color: "brand-on-background-weak",
                   }}
                 />
-                <Row fillWidth vertical="stretch" gap="m" zIndex={1} position="relative">
-                  <div style={{ width: '160px', minHeight: '100%', position: 'relative', flexShrink: 0 }}>
-                    <Media
-                      src={service.image}
-                      alt={service.title}
-                      aspectRatio="16 / 9"
-                      radius="none"
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                  <Column padding="24" gap="8" vertical="center" flex={1}>
-                    <Heading variant="heading-strong-m">{service.title}</Heading>
+                <Column fillWidth zIndex={1} position="relative">
+                  <Media
+                    src={service.image}
+                    alt={service.title}
+                    aspectRatio="16 / 10"
+                    radius="none"
+                    style={{ objectFit: 'cover' }}
+                  />
+                  <Column padding="24" gap="12">
+                    <Heading variant="heading-strong-l">{service.title}</Heading>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {service.text}
                     </Text>
                   </Column>
-                </Row>
+                </Column>
               </Card>
             </RevealFx>
           ))}
-        </Column>
-      </Grid>
+        </Grid>
+      </Column>
 
       {/* SECONDARY SERVICES */}
       <RevealFx translateY="16" fillWidth>
