@@ -2,14 +2,15 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "BOMS-expo",
+  lastName: "",
+  name: `BOMS-expo`,
+  role: "Sajamska industrija",
+  avatar: "/images/boms_logo.png",
+  email: "info@bomsexpo.com",
+  location: "Bosna i Hercegovina",
+  timeZone: "Europe/Sarajevo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Bosnian", "English", "German"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -58,17 +59,17 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `BOMSEXPO`,
+  description: `Portfolio website showcasing our work in the fair industry`,
+  headline: <>Sajamski štandovi vrhunske kvalitete</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Sajamska industrija</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Pouzdani partneri
         </Text>
       </Row>
     ),
@@ -76,16 +77,17 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      BOMS-expo dizajnira i izrađuje vrhunske sajamske štandove. <br />
+      Preko 28 godina iskustva, OCTANORM sistem i 100+ završenih projekata.
+    </>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "O nama",
+  title: `O nama - BOMSEXPO`,
+  description: `Upoznajte ${person.name}, kompaniju za ${person.role} iz ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -99,31 +101,27 @@ const about: About = {
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Uvod",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Ideja je samo misao sve dok se ne sprovede u djelo. Uz desetljeća iskustva i naš kompetentan tim, osiguravamo da svaka vaša zamisao dobije željeni oblik, nudeći vam potpuno transparentan proces saradnje.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Naši resursi i kapaciteti",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Vlastita proizvodnja",
+        timeframe: "Preko 2 decenije iskustva",
+        role: "Vlastiti magacin i radionica",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Posjedujemo vlastiti magacin i radionicu opremljenu za najzahtjevnije projekte.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Stručno radimo sa OCTANORM sistemom, što nam omogućava izradu svih vrsta štandova kombinirajući drvo, metal i plastiku.
           </>,
         ],
         images: [
@@ -137,17 +135,15 @@ const about: About = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Naš pristup",
+        timeframe: "100+ završenih projekata",
+        role: "Fokus na kvalitet",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Naša posvećenost kvaliteti ogleda se u preko 100 završenih projekata i stopi od 97% zadovoljnih kupaca.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Svakom projektu pristupamo individualno i profesionalno, garantujući Vam transparentnu saradnju.
           </>,
         ],
         images: [],
@@ -156,31 +152,31 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Podrška klijentima",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Kompetentan tim",
+        description: <>Naš kompetentan tim osigurava da svaka vaša zamisao dobije željeni oblik, od prve ideje do finalne realizacije.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Uvijek na raspolaganju",
+        description: <>Stojimo Vam na raspolaganju za sva pitanja i nejasnoće tokom cijelog procesa rada.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Tehnologija i materijali",
     skills: [
       {
-        title: "Figma",
+        title: "OCTANORM sistem",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Sistem koji nam omogućava izradu svih vrsta štandova kombinirajući drvo, metal i plastiku za vrhunske rezultate.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "OCTANORM",
+            icon: "grid",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -200,22 +196,14 @@ const about: About = {
         ],
       },
       {
-        title: "Next.js",
+        title: "Neovisna infrastruktura",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Oslanjamo se na naš vlastiti magacin i radionicu, što garantuje kvalitetnu i pravovremenu izradu.</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Infrastruktura",
+            icon: "home",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -233,19 +221,19 @@ const about: About = {
 };
 
 const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  path: "/portfolio",
+  label: "Portfolio",
+  title: "Portfolio i reference",
+  description: `Pogledajte naše referentne projekte i sajamske nastupe - ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: "Usluge",
+  title: `Naše usluge – ${person.name}`,
+  description: `Saznajte više o uslugama koje nudi ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };

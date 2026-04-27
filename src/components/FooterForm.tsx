@@ -1,0 +1,17 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import { Column } from "@once-ui-system/core";
+import { ContactForm } from "@/components/home/ContactForm";
+
+export const FooterForm = () => {
+    const pathname = usePathname();
+    const isHome = pathname === "/";
+    const isAbout = pathname === "/about";
+
+    return (
+        <Column fillWidth paddingTop={isHome ? "0" : (isAbout ? "60" : "70")}>
+            <ContactForm />
+        </Column>
+    );
+};

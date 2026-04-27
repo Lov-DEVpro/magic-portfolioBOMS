@@ -11,11 +11,13 @@ import {
   Meta,
   Schema,
   Row,
+  Flex,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -51,7 +53,7 @@ export default function About() {
     },
   ];
   return (
-    <Column maxWidth="m">
+    <Column maxWidth="l" style={{ paddingTop: 'calc(var(--static-space-32) + 30px)' }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -98,18 +100,31 @@ export default function About() {
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
             </Row>
-            {person.languages && person.languages.length > 0 && (
-              <Row wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Row>
-            )}
+            <Column gap="8" fillWidth horizontal="center">
+              <Flex direction="column" gap="4" alignItems="center" s={{ style: { textAlign: 'center' } }}>
+                <Text variant="body-default-xs">
+                  <Text onBackground="neutral-weak">Adresa:</Text> Stjepan Polje bb, 75320 Gračanica
+                </Text>
+                <Text variant="body-default-xs">
+                  <Text onBackground="neutral-weak">Info telefon:</Text> 0800 202 12
+                </Text>
+                <Text variant="body-default-xs">
+                  <Text onBackground="neutral-weak">Mob:</Text> +387 (0) 62 343 328
+                </Text>
+                <Text variant="body-default-xs">
+                  <Text onBackground="neutral-weak">Tel:</Text> +387 (0) 35 783 040
+                </Text>
+                <Text variant="body-default-xs">
+                  <Text onBackground="neutral-weak">Email:</Text> info@bomsexpo.com
+                </Text>
+                <Text variant="body-default-xs">
+                  <Text onBackground="neutral-weak">Web:</Text> www.bomsexpo.com
+                </Text>
+              </Flex>
+            </Column>
           </Column>
         )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+        <Column className={styles.blockAlign} flex={9} maxWidth="l">
           <Column
             id={about.intro.title}
             fillWidth
@@ -130,12 +145,14 @@ export default function About() {
                 className={styles.blockAlign}
                 style={{
                   backdropFilter: "blur(var(--static-space-1))",
+                  cursor: 'pointer'
                 }}
+                onClick={() => window.location.hash = 'contact'}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Row paddingX="8">Kontaktirajte nas</Row>
                 <IconButton
-                  href={about.calendar.link}
+                  href="#contact"
                   data-border="rounded"
                   variant="secondary"
                   icon="chevronRight"
@@ -152,48 +169,19 @@ export default function About() {
             >
               {person.role}
             </Text>
-            {social.length > 0 && (
-              <Row
-                className={styles.blockAlign}
-                paddingTop="20"
-                paddingBottom="8"
-                gap="8"
-                wrap
-                horizontal="center"
-                fitWidth
-                data-border="rounded"
-              >
-                {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
-                    item.link && (
-                      <React.Fragment key={item.name}>
-                        <Row s={{ hide: true }}>
-                          <Button
-                            key={item.name}
-                            href={item.link}
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="s"
-                            weight="default"
-                            variant="secondary"
-                          />
-                        </Row>
-                        <Row hide s={{ hide: false }}>
-                          <IconButton
-                            size="l"
-                            key={`${item.name}-icon`}
-                            href={item.link}
-                            icon={item.icon}
-                            variant="secondary"
-                          />
-                        </Row>
-                      </React.Fragment>
-                    ),
-                )}
-              </Row>
-            )}
+            <Row
+              className={styles.blockAlign}
+              paddingTop="20"
+              paddingBottom="8"
+              gap="8"
+              wrap
+              horizontal="center"
+              fitWidth
+            >
+              <Tag size="l" prefixIcon="calendar">20+ godina iskustva</Tag>
+              <Tag size="l" prefixIcon="grid">Vlastita proizvodnja</Tag>
+              <Tag size="l" prefixIcon="arrowUpRight">100+ završenih projekata</Tag>
+            </Row>
           </Column>
 
           {about.intro.display && (
@@ -337,6 +325,7 @@ export default function About() {
           )}
         </Column>
       </Row>
+
     </Column>
   );
 }
