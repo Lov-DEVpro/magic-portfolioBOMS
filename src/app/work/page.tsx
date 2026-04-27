@@ -1,5 +1,3 @@
-"use client";
-
 import { Column, Heading, Meta, Schema, Grid, Button, RevealFx, Media, Card, Icon, Row, SmartLink, Background, Text } from "@once-ui-system/core";
 import { baseURL, about, person, work, effects } from "@/resources";
 
@@ -80,7 +78,7 @@ export default function Work() {
       {/* CORE SERVICES - STICKY SCROLL LAYOUT */}
       <Grid columns="12" gap="xl" fillWidth marginBottom="80" style={{ position: 'relative', alignItems: 'flex-start' }}>
         {/* LEFT COLUMN: STICKY INTRO */}
-        <Column style={{ gridColumn: 'span 5' }} s={{ style: { gridColumn: 'span 12' } }} position="sticky" top="120" height="fit-content" gap="16">
+        <Column style={{ gridColumn: 'span 5', top: '120px', height: 'fit-content' }} s={{ style: { gridColumn: 'span 12' } }} position="sticky" gap="16">
           <RevealFx translateY="4">
             <Text variant="label-default-s" onBackground="brand-medium" style={{ textTransform: 'uppercase', letterSpacing: '2px' }}>
               Šta radimo
@@ -121,7 +119,7 @@ export default function Work() {
                   }}
                   gradient={{
                     display: true,
-                    opacity: 15,
+                    opacity: 20,
                     width: 100,
                     height: 100,
                     colorStart: "#20356a",

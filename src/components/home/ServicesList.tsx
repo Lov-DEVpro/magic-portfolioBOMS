@@ -17,7 +17,10 @@ export const ServicesList = () => {
       {services.map((service, i) => (
         <Badge 
           key={i} 
-          variant="brand" 
+          background="brand-alpha-weak"
+          onBackground="neutral-strong"
+          textVariant="label-default-s"
+          arrow={false}
           style={{ 
             padding: '8px 16px', 
             cursor: 'pointer', 

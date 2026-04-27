@@ -1,16 +1,22 @@
-"use client";
-
-import { useState } from "react";
-import { Column, Heading, Meta, Schema, Button } from "@once-ui-system/core";
-import { Posts } from "@/components/blog/Posts";
+import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { PortfolioPostsClient } from "@/components/blog/PortfolioPostsClient";
 import { baseURL, blog, person } from "@/resources";
+import { getPosts } from "@/utils/utils";
+
+export async function generateMetadata() {
+  return Meta.generate({
+    title: "Portfolio",
+    description: blog.description,
+    baseURL: baseURL,
+    image: `/api/og/generate?title=${encodeURIComponent("Portfolio")}`,
+    path: "/portfolio",
+  });
+}
 
 export default function Portfolio() {
-  const [visibleCount, setVisibleCount] = useState(3);
-
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 4);
-  };
+  const posts = getPosts(["src", "app", "portfolio", "posts"]).sort((a, b) => {
+    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+  });
 
   return (
     <Column maxWidth="m" paddingTop="24">
@@ -27,34 +33,15 @@ export default function Portfolio() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Heading 
-        marginBottom="l" 
-        variant="heading-strong-xl" 
+      <Heading
+        marginBottom="l"
+        variant="heading-strong-xl"
         marginLeft="24"
-        style={{ marginTop: '25px' }}
+        style={{ marginTop: "25px" }}
       >
         Portfolio
       </Heading>
-      <Column fillWidth flex={1} gap="40">
-        <Posts range={[1, 1]} thumbnail />
-        <Posts range={[2, 3]} columns="2" thumbnail direction="column" />
-        
-        {visibleCount > 3 && (
-            <Posts range={[4, visibleCount]} columns="2" />
-        )}
-
-        {visibleCount < 16 && ( // Assuming user eventually adds 16 references
-            <Column fillWidth horizontal="center" marginBottom="l">
-                <Button
-                    variant="secondary"
-                    onClick={handleLoadMore}
-                    style={{ width: 'fit-content' }}
-                >
-                    Učitaj više
-                </Button>
-            </Column>
-        )}
-      </Column>
+      <PortfolioPostsClient posts={posts} />
     </Column>
   );
 }

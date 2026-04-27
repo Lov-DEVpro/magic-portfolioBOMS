@@ -42,14 +42,16 @@ export type FontsConfig = {
   code: NextFontWithVariable;
 };
 
+type ColorScheme = Schemes | "custom";
+
 /**
  * Style customization for main layout.
  */
 export type StyleConfig = {
   theme: Theme;
   neutral: NeutralColor;
-  brand: Schemes;
-  accent: Schemes;
+  brand: ColorScheme;
+  accent: ColorScheme;
   solid: SolidType;
   solidStyle: SolidStyle;
   border: BorderStyle;

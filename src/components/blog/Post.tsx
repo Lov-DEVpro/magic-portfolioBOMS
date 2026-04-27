@@ -8,14 +8,15 @@ interface PostProps {
   post: any;
   thumbnail: boolean;
   direction?: "row" | "column";
+  hrefPrefix?: string;
 }
 
-export default function Post({ post, thumbnail, direction }: PostProps) {
+export default function Post({ post, thumbnail, direction, hrefPrefix = "/blog" }: PostProps) {
   return (
     <Card
       fillWidth
       key={post.slug}
-      href={`/blog/${post.slug}`}
+      href={`${hrefPrefix}/${post.slug}`}
       transition="micro-medium"
       direction={direction}
       border="transparent"

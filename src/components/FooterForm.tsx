@@ -9,8 +9,10 @@ export const FooterForm = () => {
     const isHome = pathname === "/";
     const isAbout = pathname === "/about";
 
+    const paddingTop = isHome ? "0" : isAbout ? "60px" : "70px";
+
     return (
-        <Column fillWidth paddingTop={isHome ? "0" : (isAbout ? "60" : "70")}>
+        <Column fillWidth style={{ paddingTop }}>
             <ContactForm />
         </Column>
     );

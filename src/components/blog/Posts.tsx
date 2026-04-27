@@ -1,6 +1,5 @@
 import { getPosts } from "@/utils/utils";
-import { Grid } from "@once-ui-system/core";
-import Post from "./Post";
+import { PostGrid } from "./PostGrid";
 
 interface PostsProps {
   range?: [number] | [number, number];
@@ -8,6 +7,7 @@ interface PostsProps {
   thumbnail?: boolean;
   direction?: "row" | "column";
   exclude?: string[];
+  hrefPrefix?: string;
 }
 
 export function Posts({
@@ -16,6 +16,7 @@ export function Posts({
   thumbnail = false,
   exclude = [],
   direction,
+  hrefPrefix,
 }: PostsProps) {
   let allBlogs = getPosts(["src", "app", "portfolio", "posts"]);
 
@@ -33,14 +34,12 @@ export function Posts({
     : sortedBlogs;
 
   return (
-    <>
-      {displayedBlogs.length > 0 && (
-        <Grid columns={columns} s={{ columns: 1 }} fillWidth marginBottom="40" gap="16">
-          {displayedBlogs.map((post) => (
-            <Post key={post.slug} post={post} thumbnail={thumbnail} direction={direction} />
-          ))}
-        </Grid>
-      )}
-    </>
+    <PostGrid
+      posts={displayedBlogs}
+      columns={columns}
+      thumbnail={thumbnail}
+      direction={direction}
+      hrefPrefix={hrefPrefix}
+    />
   );
 }

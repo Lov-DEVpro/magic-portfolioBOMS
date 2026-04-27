@@ -78,10 +78,10 @@ export const ContactForm: React.FC = () => {
       
       <Column maxWidth="s" horizontal="center" zIndex={1} gap="32">
         <Column horizontal="center" gap="12">
-          <Heading variant="display-strong-xs" horizontal="center">
+          <Heading variant="display-strong-xs" align="center">
             Zatražite ponudu ili nas kontaktirajte
           </Heading>
-          <Text wrap="balance" variant="body-default-l" onBackground="neutral-weak" horizontal="center">
+          <Text wrap="balance" variant="body-default-l" onBackground="neutral-weak" align="center">
             Imate ideju za projekat ili pitanje o našim uslugama? Popunite formu ispod i naš tim će Vam se javiti u najkraćem roku.
           </Text>
         </Column>

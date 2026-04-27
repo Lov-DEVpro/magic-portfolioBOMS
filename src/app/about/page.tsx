@@ -101,7 +101,7 @@ export default function About() {
               {person.location}
             </Row>
             <Column gap="8" fillWidth horizontal="center">
-              <Flex direction="column" gap="4" alignItems="center" s={{ style: { textAlign: 'center' } }}>
+              <Flex direction="column" gap="4" horizontal="center" s={{ style: { textAlign: 'center' } }}>
                 <Text variant="body-default-xs">
                   <Text onBackground="neutral-weak">Adresa:</Text> Stjepan Polje bb, 75320 Gračanica
                 </Text>
@@ -145,9 +145,7 @@ export default function About() {
                 className={styles.blockAlign}
                 style={{
                   backdropFilter: "blur(var(--static-space-1))",
-                  cursor: 'pointer'
                 }}
-                onClick={() => window.location.hash = 'contact'}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
                 <Row paddingX="8">Kontaktirajte nas</Row>
