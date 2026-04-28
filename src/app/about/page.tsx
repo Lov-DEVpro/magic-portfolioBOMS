@@ -53,7 +53,7 @@ export default function About() {
     },
   ];
   return (
-    <Column maxWidth="l" style={{ paddingTop: 'calc(var(--static-space-32) + 30px)' }}>
+    <Column maxWidth="l" style={{ paddingTop: '30px' }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -79,7 +79,7 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
-      <Row fillWidth s={{ direction: "column"}} horizontal="center">
+      <Row fillWidth s={{ direction: "column"}} horizontal="start">
         {about.avatar.display && (
           <Column
             className={styles.avatar}
@@ -93,15 +93,15 @@ export default function About() {
             paddingBottom="xl"
             gap="m"
             flex={3}
-            horizontal="center"
+            horizontal="start"
           >
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
             </Row>
-            <Column gap="8" fillWidth horizontal="center">
-              <Flex direction="column" gap="4" horizontal="center" s={{ style: { textAlign: 'center' } }}>
+            <Column gap="8" fillWidth horizontal="start">
+              <Flex direction="column" gap="4" horizontal="start" s={{ horizontal: "center", style: { textAlign: "center" } }}>
                 <Text variant="body-default-xs">
                   <Text onBackground="neutral-weak">Adresa:</Text> Stjepan Polje bb, 75320 Gračanica
                 </Text>
@@ -173,7 +173,7 @@ export default function About() {
               paddingBottom="8"
               gap="8"
               wrap
-              horizontal="center"
+              horizontal="start"
               fitWidth
             >
               <Tag size="l" prefixIcon="calendar">20+ godina iskustva</Tag>

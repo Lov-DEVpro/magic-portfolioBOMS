@@ -41,3 +41,16 @@
         opacity: 0.8;
     }
 }
+/* Lightbox Image Styling */
+.once-ui-media-dialog img,
+[role="dialog"] img {
+    max-width: 80vw !important;
+    max-height: 80vh !important;
+    border-radius: var(--radius-l) !important;
+    box-shadow: var(--shadow-l-strong) !important;
+}
+
+[role="dialog"] {
+    background: rgba(var(--brand-rgb), 0.1) !important;
+    backdrop-filter: blur(12px) !important;
+}

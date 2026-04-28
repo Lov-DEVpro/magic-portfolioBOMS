@@ -126,7 +126,6 @@ const about: About = {
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "Once UI Project",
@@ -192,7 +191,6 @@ const about: About = {
             icon: "grid",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
@@ -222,7 +220,6 @@ const about: About = {
             icon: "home",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
@@ -256,50 +253,70 @@ const work: Work = {
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  label: "Galerija",
+  title: `Galerija slika – ${person.name}`,
+  description: `Kolekcija fotografija by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-1.jpg",
+      alt: "Sajamski štand",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-2.jpg",
+      alt: "Sajamski štand",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/gallery-3.jpg",
+      alt: "Sajamski štand",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-4.jpg",
+      alt: "Sajamski štand",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-5.jpg",
+      alt: "Sajamski štand",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/gallery-6.jpg",
+      alt: "Sajamski štand",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-7.jpg",
+      alt: "Sajamski štand",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/gallery-8.jpg",
+      alt: "Sajamski štand",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/gallery-9.jpg",
+      alt: "Sajamski štand",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-10.jpg",
+      alt: "Sajamski štand",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-11.jpg",
+      alt: "Sajamski štand",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
+      src: "/images/gallery/gallery-12.jpg",
+      alt: "Sajamski štand",
       orientation: "vertical",
     },
   ],

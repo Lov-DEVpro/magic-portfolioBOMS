@@ -19,7 +19,7 @@ export default function Portfolio() {
   });
 
   return (
-    <Column maxWidth="m" paddingTop="24">
+    <Column maxWidth="m" style={{ paddingTop: "30px" }}>
       <Schema
         as="blogPosting"
         baseURL={baseURL}
@@ -37,7 +37,7 @@ export default function Portfolio() {
         marginBottom="l"
         variant="heading-strong-xl"
         marginLeft="24"
-        style={{ marginTop: "25px" }}
+        
       >
         {blog.title}
       </Heading>

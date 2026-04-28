@@ -84,6 +84,7 @@ export default async function RootLayout({
       )}
     >
       <head>
+        <meta charSet="utf-8" />
         <script
           id="extension-cleanup"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: runs before hydration to remove extension-injected DOM mutations

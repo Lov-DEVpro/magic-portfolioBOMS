@@ -46,7 +46,7 @@ const services = [
 
 export default function Work() {
   return (
-    <Column maxWidth="l" fillWidth paddingY="xl" position="relative">
+    <Column maxWidth="l" fillWidth style={{ paddingTop: "30px", paddingBottom: "32px" }} position="relative">
       <Background
         mask={{
           cursor: true,

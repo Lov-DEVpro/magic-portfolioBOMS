@@ -11,7 +11,7 @@ import type {
   SocialSharingConfig,
   StyleConfig,
 } from "@/types";
-import { home } from "./index";
+import { home } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://demo.magic-portfolio.com";
@@ -205,14 +205,14 @@ const sameAs: SameAsConfig = {
 const socialSharing: SocialSharingConfig = {
   display: true,
   platforms: {
-    x: true,
-    linkedin: true,
+    x: false,
+    linkedin: false,
     facebook: false,
     pinterest: false,
     whatsapp: false,
     reddit: false,
     telegram: false,
-    email: true,
+    email: false,
     copyLink: true,
   },
 };
