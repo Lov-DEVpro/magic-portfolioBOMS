@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -57,7 +57,7 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/boms_logo.png",
   label: "Home",
   title: `BOMSEXPO`,
   description: `Portfolio website showcasing our work in the fair industry`,
@@ -104,7 +104,9 @@ const about: About = {
     title: "Uvod",
     description: (
       <>
-        Ideja je samo misao sve dok se ne sprovede u djelo. Uz desetljeća iskustva i naš kompetentan tim, osiguravamo da svaka vaša zamisao dobije željeni oblik, nudeći vam potpuno transparentan proces saradnje.
+        Ideja je samo misao sve dok se ne sprovede u djelo. Uz desetljeća iskustva i naš kompetentan
+        tim, osiguravamo da svaka vaša zamisao dobije željeni oblik, nudeći vam potpuno
+        transparentan proces saradnje.
       </>
     ),
   },
@@ -117,11 +119,10 @@ const about: About = {
         timeframe: "Preko 2 decenije iskustva",
         role: "Vlastiti magacin i radionica",
         achievements: [
+          <>Posjedujemo vlastiti magacin i radionicu opremljenu za najzahtjevnije projekte.</>,
           <>
-            Posjedujemo vlastiti magacin i radionicu opremljenu za najzahtjevnije projekte.
-          </>,
-          <>
-            Stručno radimo sa OCTANORM sistemom, što nam omogućava izradu svih vrsta štandova kombinirajući drvo, metal i plastiku.
+            Stručno radimo sa OCTANORM sistemom, što nam omogućava izradu svih vrsta štandova
+            kombinirajući drvo, metal i plastiku.
           </>,
         ],
         images: [
@@ -140,10 +141,12 @@ const about: About = {
         role: "Fokus na kvalitet",
         achievements: [
           <>
-            Naša posvećenost kvaliteti ogleda se u preko 100 završenih projekata i stopi od 97% zadovoljnih kupaca.
+            Naša posvećenost kvaliteti ogleda se u preko 100 završenih projekata i stopi od 97%
+            zadovoljnih kupaca.
           </>,
           <>
-            Svakom projektu pristupamo individualno i profesionalno, garantujući Vam transparentnu saradnju.
+            Svakom projektu pristupamo individualno i profesionalno, garantujući Vam transparentnu
+            saradnju.
           </>,
         ],
         images: [],
@@ -156,11 +159,18 @@ const about: About = {
     institutions: [
       {
         name: "Kompetentan tim",
-        description: <>Naš kompetentan tim osigurava da svaka vaša zamisao dobije željeni oblik, od prve ideje do finalne realizacije.</>,
+        description: (
+          <>
+            Naš kompetentan tim osigurava da svaka vaša zamisao dobije željeni oblik, od prve ideje
+            do finalne realizacije.
+          </>
+        ),
       },
       {
         name: "Uvijek na raspolaganju",
-        description: <>Stojimo Vam na raspolaganju za sva pitanja i nejasnoće tokom cijelog procesa rada.</>,
+        description: (
+          <>Stojimo Vam na raspolaganju za sva pitanja i nejasnoće tokom cijelog procesa rada.</>
+        ),
       },
     ],
   },
@@ -171,7 +181,10 @@ const about: About = {
       {
         title: "OCTANORM sistem",
         description: (
-          <>Sistem koji nam omogućava izradu svih vrsta štandova kombinirajući drvo, metal i plastiku za vrhunske rezultate.</>
+          <>
+            Sistem koji nam omogućava izradu svih vrsta štandova kombinirajući drvo, metal i
+            plastiku za vrhunske rezultate.
+          </>
         ),
         tags: [
           {
@@ -198,7 +211,10 @@ const about: About = {
       {
         title: "Neovisna infrastruktura",
         description: (
-          <>Oslanjamo se na naš vlastiti magacin i radionicu, što garantuje kvalitetnu i pravovremenu izradu.</>
+          <>
+            Oslanjamo se na naš vlastiti magacin i radionicu, što garantuje kvalitetnu i
+            pravovremenu izradu.
+          </>
         ),
         tags: [
           {

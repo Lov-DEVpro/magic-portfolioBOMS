@@ -4,27 +4,66 @@ import "@/resources/custom.css";
 
 import classNames from "classnames";
 
+import { Footer, FooterForm, Header, Providers, RouteGuard } from "@/components";
+import { baseURL, dataStyle, effects, fonts, home, style } from "@/resources";
 import {
   Background,
   Column,
   Flex,
   Meta,
-  opacity,
   RevealFx,
-  SpacingToken,
+  type SpacingToken,
+  type opacity,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers, FooterForm } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
-  return Meta.generate({
-    title: home.title,
-    description: home.description,
-    baseURL: baseURL,
-    path: home.path,
-    image: home.image,
-  });
+  return {
+    ...Meta.generate({
+      title: home.title,
+      description: home.description,
+      baseURL: baseURL,
+      path: home.path,
+      image: home.image,
+    }),
+    icons: {
+      icon: "/images/boms_logo.png",
+      apple: "/images/boms_logo.png",
+    },
+  };
 }
+
+const extensionCleanupScript = `
+  (function() {
+    var attrs = ["bis_skin_checked", "bis_use", "data-bis-config", "data-dynamic-id"];
+    var clean = function(root) {
+      if (!root || root.nodeType !== 1) return;
+      attrs.forEach(function(attr) {
+        if (root.hasAttribute(attr)) root.removeAttribute(attr);
+      });
+      root.querySelectorAll("[bis_skin_checked], [bis_use], [data-bis-config], [data-dynamic-id]").forEach(function(node) {
+        attrs.forEach(function(attr) {
+          node.removeAttribute(attr);
+        });
+      });
+      root.querySelectorAll('script[src^="chrome-extension://"]').forEach(function(node) {
+        node.remove();
+      });
+    };
+
+    clean(document.documentElement);
+
+    new MutationObserver(function(list) {
+      list.forEach(function(change) {
+        if (change.type === "attributes") clean(change.target);
+        change.addedNodes.forEach(clean);
+      });
+    }).observe(document.documentElement, {
+      attributes: true,
+      childList: true,
+      subtree: true
+    });
+  })();
+`;
 
 export default async function RootLayout({
   children,
@@ -46,7 +85,15 @@ export default async function RootLayout({
     >
       <head>
         <script
+          id="extension-cleanup"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: runs before hydration to remove extension-injected DOM mutations
+          dangerouslySetInnerHTML={{
+            __html: extensionCleanupScript,
+          }}
+        />
+        <script
           id="theme-init"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: initializes theme attributes before hydration
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -161,7 +208,7 @@ export default async function RootLayout({
           <Flex zIndex={0} fillWidth horizontal="center" flex={1}>
             <Column horizontal="center" fillWidth minHeight="0" maxWidth="m" paddingX="l">
               <RouteGuard>{children}</RouteGuard>
-              <div id="contact" style={{ width: '100%' }}>
+              <div id="contact" style={{ width: "100%" }}>
                 <FooterForm />
               </div>
             </Column>

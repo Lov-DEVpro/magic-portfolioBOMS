@@ -1,11 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import { Button, Column } from "@once-ui-system/core";
+import { useState } from "react";
 import { PostGrid } from "./PostGrid";
 
+type PortfolioPost = {
+  slug: string;
+  metadata: {
+    title: string;
+    publishedAt: string;
+    image?: string;
+    tag?: string;
+  };
+};
+
 interface PortfolioPostsClientProps {
-  posts: any[];
+  posts: PortfolioPost[];
 }
 
 export function PortfolioPostsClient({ posts }: PortfolioPostsClientProps) {
@@ -26,9 +36,7 @@ export function PortfolioPostsClient({ posts }: PortfolioPostsClientProps) {
         hrefPrefix="/portfolio"
       />
 
-      {visibleCount > 3 && (
-        <PostGrid posts={additionalPosts} columns="2" hrefPrefix="/portfolio" />
-      )}
+      {visibleCount > 3 && <PostGrid posts={additionalPosts} columns="2" hrefPrefix="/portfolio" />}
 
       {visibleCount < posts.length && (
         <Column fillWidth horizontal="center" marginBottom="l">

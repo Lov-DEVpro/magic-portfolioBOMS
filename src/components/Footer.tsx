@@ -1,5 +1,4 @@
-import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
-import { person, social } from "@/resources";
+import { IconButton, Row, SmartLink, Text } from "@once-ui-system/core";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -28,7 +27,7 @@ export const Footer = () => {
             / Created by <SmartLink href="https://ed-vision.com">Edvision</SmartLink>
           </Text>
         </Text>
-        <Row gap="16">
+        <Row className={styles.socialIcons} gap="8">
           <IconButton
             href="https://www.facebook.com/BomsExpo/"
             icon="facebook"

@@ -1,15 +1,15 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { PortfolioPostsClient } from "@/components/blog/PortfolioPostsClient";
 import { baseURL, blog, person } from "@/resources";
 import { getPosts } from "@/utils/utils";
+import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 
 export async function generateMetadata() {
   return Meta.generate({
-    title: "Portfolio",
+    title: blog.title,
     description: blog.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent("Portfolio")}`,
-    path: "/portfolio",
+    image: `/api/og/generate?title=${encodeURIComponent(blog.title)}`,
+    path: blog.path,
   });
 }
 
@@ -23,13 +23,13 @@ export default function Portfolio() {
       <Schema
         as="blogPosting"
         baseURL={baseURL}
-        title="Portfolio"
+        title={blog.title}
         description={blog.description}
-        path="/portfolio"
-        image={`/api/og/generate?title=${encodeURIComponent("Portfolio")}`}
+        path={blog.path}
+        image={`/api/og/generate?title=${encodeURIComponent(blog.title)}`}
         author={{
           name: person.name,
-          url: `${baseURL}/portfolio`,
+          url: `${baseURL}${blog.path}`,
           image: `${baseURL}${person.avatar}`,
         }}
       />
@@ -39,7 +39,7 @@ export default function Portfolio() {
         marginLeft="24"
         style={{ marginTop: "25px" }}
       >
-        Portfolio
+        {blog.title}
       </Heading>
       <PortfolioPostsClient posts={posts} />
     </Column>

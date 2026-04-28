@@ -8,6 +8,7 @@ interface PostsProps {
   direction?: "row" | "column";
   exclude?: string[];
   hrefPrefix?: string;
+  postsPath?: string[];
 }
 
 export function Posts({
@@ -17,8 +18,9 @@ export function Posts({
   exclude = [],
   direction,
   hrefPrefix,
+  postsPath = ["src", "app", "blog", "posts"],
 }: PostsProps) {
-  let allBlogs = getPosts(["src", "app", "portfolio", "posts"]);
+  let allBlogs = getPosts(postsPath);
 
   // Exclude by slug (exact match)
   if (exclude.length) {

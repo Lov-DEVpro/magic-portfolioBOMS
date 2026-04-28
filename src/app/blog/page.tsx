@@ -1,15 +1,18 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
-import { baseURL, blog, person, newsletter } from "@/resources";
+import { baseURL, blog, newsletter, person } from "@/resources";
+import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+
+const blogPath = "/blog";
+const blogTitle = "Blog";
 
 export async function generateMetadata() {
   return Meta.generate({
-    title: blog.title,
+    title: blogTitle,
     description: blog.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(blog.title)}`,
-    path: blog.path,
+    image: `/api/og/generate?title=${encodeURIComponent(blogTitle)}`,
+    path: blogPath,
   });
 }
 
@@ -19,18 +22,18 @@ export default function Blog() {
       <Schema
         as="blogPosting"
         baseURL={baseURL}
-        title={blog.title}
+        title={blogTitle}
         description={blog.description}
-        path={blog.path}
-        image={`/api/og/generate?title=${encodeURIComponent(blog.title)}`}
+        path={blogPath}
+        image={`/api/og/generate?title=${encodeURIComponent(blogTitle)}`}
         author={{
           name: person.name,
-          url: `${baseURL}/blog`,
+          url: `${baseURL}${blogPath}`,
           image: `${baseURL}${person.avatar}`,
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">
-        {blog.title}
+        {blogTitle}
       </Heading>
       <Column fillWidth flex={1} gap="40">
         <Posts range={[1, 1]} thumbnail />
